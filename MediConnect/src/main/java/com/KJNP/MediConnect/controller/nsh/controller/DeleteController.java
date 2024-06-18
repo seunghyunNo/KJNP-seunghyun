@@ -9,25 +9,18 @@ import com.KJNP.MediConnect.controller.nsh.biz.BoardDTO;
 import com.KJNP.MediConnect.controller.nsh.biz.BoardService;
 
 @Controller
-public class WriteController {
+public class DeleteController {
 
-	
 	@Autowired
-	private BoardService boardService;
+	private BoardService boardSerivce;
 	
-	
-	@RequestMapping(value="/writeBoard", method = RequestMethod.GET)
-	public String writeBoardPage() {
+	@RequestMapping(value = "/deleteBoard",method = RequestMethod.GET)
+	public String deleteBoard(BoardDTO boardDTO) {
 		
-		return "nsh/writeBoard";
-	}
-	
-	@RequestMapping(value="/writeBoard",method=RequestMethod.POST)
-	public String wrtieBoard(BoardDTO boardDTO) {
+		boardSerivce.delete(boardDTO);
 		
-		boardService.insert(boardDTO);
+		System.out.println("삭제 성공");
 		
 		return "redirect:boardList";
 	}
-	
 }
