@@ -9,5 +9,7 @@
 <body>
 	<h1>test</h1>
 	<hr/>
+	
+	<a href="/boardList">¸®½ºÆ®</a>
 </body>
 </html>

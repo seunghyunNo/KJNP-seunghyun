@@ -1,33 +1,31 @@
 package com.KJNP.MediConnect.controller.nsh.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.KJNP.MediConnect.controller.nsh.biz.BoardDTO;
 import com.KJNP.MediConnect.controller.nsh.biz.BoardService;
 
 @Controller
-public class WriteController {
-
+public class ListController {
+	
 	
 	@Autowired
 	private BoardService boardService;
 	
-	
-	@RequestMapping(value="/writeBoard", method = RequestMethod.GET)
-	public String writeBoardPage() {
+	@RequestMapping("/boardList")
+	public String BoardList(Model model,BoardDTO boardDTO) {
 		
-		return "nsh/writeBoard";
+		List<BoardDTO> boardList = boardService.selectAll(boardDTO);
+		
+		model.addAttribute("boardList",boardList);
+		
+		System.out.println("boardList "+boardList);
+		
+		return "nsh/boardList";
 	}
-	
-	@RequestMapping(value="/writeBoard",method=RequestMethod.POST)
-	public String wrtieBoard(BoardDTO boardDTO) {
-		
-		boardService.insert(boardDTO);
-		
-		return "redirect:boardList";
-	}
-	
 }
