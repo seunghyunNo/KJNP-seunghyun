@@ -1,4 +1,4 @@
-package com.KJNP.MediConnect.controller.nsh.controller;
+package com.KJNP.MediConnect.controller.nsh.controller.board;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.KJNP.MediConnect.controller.nsh.biz.BoardDTO;
-import com.KJNP.MediConnect.controller.nsh.biz.BoardService;
+import com.KJNP.MediConnect.biz.board.BoardDTO;
+import com.KJNP.MediConnect.biz.board.BoardService;
 
 @Controller
 public class ListController {

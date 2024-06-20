@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.KJNP.MediConnect.biz.board.BoardDAO">
+<mapper namespace="com.KJNP.MediConnect.biz.comment.CommentDAO">
 	<insert id="insert">
 		INSERT INTO 
 			BOARD(
@@ -10,7 +10,6 @@
 			WRITER,
 			REG_DATE)
 			 VALUES(
-			 #{title},
 			 #{content},
 			 #{writer},
 			 NOW())
@@ -21,14 +20,13 @@
 	</select>
 	
 	<select id="selectOne">
-		SELECT * FROM BOARD WHERE BOARD_IDX=#{boardIdx}
 	</select>
 	
 	<delete id="delete">
-		DELETE FROM BOARD WHERE BOARD_IDX=#{BOARD_IDX} AND WRITER=#{writer}
+		DELETE FROM COMMENT WHERE COMMENT_IDX=#{commentIdx}
 	</delete>
 	
 	<update id="update">
-		UPDATE BOARD SET TITLE=#{title},CONTENT=#{content} WHERE BOARD_IDX=#{boardIdx} AND WRITER=#{writer}
+		UPDATE BOARD SET CONTENT=#{content} WHERE COMMENT_IDX=#{commentIdx}
 	</update>
 </mapper>
