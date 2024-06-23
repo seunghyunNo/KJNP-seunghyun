@@ -78,7 +78,7 @@
           
           <div class="form-group mt-3">
           <!--작성자라면 수정하기 버튼 나오게-->
-          	<c:if test=${member == boardData.id}>
+          	<c:if test="${loginData.id == boardSingle.id}">
           		<div class="text-center"><a href="/updateBoard?id=${boardData.id}">수정하기</a></div>
           		<div class="text-center"><a href="/deleteBoard?id=${boardData.id}">삭제하기</a></div>
           	</c:if>

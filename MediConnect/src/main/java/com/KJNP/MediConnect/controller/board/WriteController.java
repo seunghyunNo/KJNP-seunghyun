@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.KJNP.MediConnect.biz.board.BoardDTO;
 import com.KJNP.MediConnect.biz.board.BoardService;
+import com.KJNP.MediConnect.biz.member.MemberDTO;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -25,9 +26,9 @@ public class WriteController {
 	}
 	
 	@RequestMapping(value="/writeBoard",method=RequestMethod.POST)
-	public String wrtieBoard(BoardDTO boardDTO, HttpSession session) {
+	public String wrtieBoard(BoardDTO boardDTO,HttpSession session) {
 		
-		boardDTO.setWriter((String) session.getAttribute("writer"));
+		boardDTO.setWriter(((MemberDTO)session.getAttribute("member")).getId());
 		
 		boardService.insert(boardDTO);
 		
