@@ -31,6 +31,8 @@ public class SingleController {
 
 		List<CommentDTO> commentList = commentService.selectAll(commentDTO);
 
+		model.addAttribute("loginData",session.getAttribute("member"));
+		System.out.println(model.getAttribute("loginData"));
 		model.addAttribute("boardSingle", boardDTO);
 		model.addAttribute("commentList", commentList);
 

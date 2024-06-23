@@ -76,19 +76,19 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>°Ô½ÃÆÇ - ±Û ÀÛ¼º</h2>
+          <h2>ê²Œì‹œíŒ - ê¸€ ìž‘ì„±</h2>
         </div>
 
         <form action="/writeBoard" method="POST" class="">
           <div class="row">
             <div class="col-md-4 form-group">
-              <input type="text" name="title" class="form-control" id="title" placeholder="Á¦¸ñ" required>
+              <input type="text" name="title" class="form-control" id="title" placeholder="ì œëª©" required>
             </div>
           </div>
           <div class="form-group mt-3">
-            <textarea class="form-control" name="content" rows="5" placeholder="³»¿ë"></textarea>
+            <textarea class="form-control" name="content" rows="5" placeholder="ë‚´ìš©"></textarea>
           </div>
-          <div class="text-center"><button type="submit">ÀÛ¼ºÇÏ±â</button></div>
+          <div class="text-center"><button type="submit">ìž‘ì„±í•˜ê¸°</button></div>
         </form>
 
       </div>
