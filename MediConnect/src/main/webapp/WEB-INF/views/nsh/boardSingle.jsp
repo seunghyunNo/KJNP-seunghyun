@@ -44,26 +44,13 @@
 
 <body>
 
+  <!-- ======= Top Bar ======= -->
+  
+
   <!-- ======= Header ======= -->
   <tags:navBar/>
   
   <!-- End Header -->
-
-  <!-- ======= Top Bar ======= -->
-  <div id="topbar" class="d-flex align-items-center fixed-top">
-    <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
-      <div class="align-items-center d-none d-md-flex">
-        <i class="bi bi-clock"></i> Monday - Saturday, 8AM to 10PM
-      </div>
-      <div class="d-flex align-items-center">
-        <i class="bi bi-phone"></i> Call us now +1 5589 55488 55
-      </div>
-    </div>
-  </div>
-
-  <!-- ======= Header ======= -->
-	<tags:navBar/>
-<!-- End Header -->
 
   <section id="">
 
@@ -76,21 +63,30 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>∞‘Ω√∆« - ±€ ¿€º∫</h2>
+          <h2>Í≤åÏãúÌåê - Í∏Ä ÏàòÏ†ï</h2>
         </div>
 
-        <form action="/writeBoard" method="POST" class="">
+        <form action="/boardUpdate" method="POST" class="">
           <div class="row">
             <div class="col-md-4 form-group">
-              <input type="text" name="title" class="form-control" id="title" placeholder="¡¶∏Ò" required>
+              <input type="text" name="title" class="form-control" id="title" placeholder="Ï†úÎ™©" value="${boardData.title}" disabled>
             </div>
           </div>
           <div class="form-group mt-3">
-            <textarea class="form-control" name="content" rows="5" placeholder="≥ªøÎ"></textarea>
+            <textarea class="form-control" name="content" rows="5" placeholder="ÎÇ¥Ïö©">${boardData.content}</textarea>
           </div>
-          <div class="text-center"><button type="submit">¿€º∫«œ±‚</button></div>
+          
+          <div class="form-group mt-3">
+          <!--ÏûëÏÑ±ÏûêÎùºÎ©¥ ÏàòÏ†ïÌïòÍ∏∞ Î≤ÑÌäº ÎÇòÏò§Í≤å-->
+          	<c:if test=${member == boardData.id}>
+          		<div class="text-center"><a href="/updateBoard?id=${boardData.id}">ÏàòÏ†ïÌïòÍ∏∞</a></div>
+          		<div class="text-center"><a href="/deleteBoard?id=${boardData.id}">ÏÇ≠Ï†úÌïòÍ∏∞</a></div>
+          	</c:if>
+          
+          </div>
         </form>
-
+        
+        <tags:comment/>
       </div>
     </section><!-- End Appointment Section -->
 
