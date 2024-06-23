@@ -1,4 +1,4 @@
-package com.KJNP.MediConnect.controller.nsh.controller.board;
+package com.KJNP.MediConnect.controller.board;
 
 import java.util.List;
 

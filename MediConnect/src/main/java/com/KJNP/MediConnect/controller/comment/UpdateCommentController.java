@@ -1,4 +1,4 @@
-package com.KJNP.MediConnect.controller.nsh.controller.comment;
+package com.KJNP.MediConnect.controller.comment;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

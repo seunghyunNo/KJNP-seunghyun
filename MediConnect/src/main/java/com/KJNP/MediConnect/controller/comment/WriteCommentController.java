@@ -1,4 +1,4 @@
-package com.KJNP.MediConnect.controller.nsh.controller.comment;
+package com.KJNP.MediConnect.controller.comment;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.KJNP.MediConnect.biz.comment.CommentDTO;
 import com.KJNP.MediConnect.biz.comment.CommentService;
-import com.KJNP.MediConnect.biz.member.MemberDTO;
-import com.KJNP.MediConnect.biz.member.MemberService;
 
 import jakarta.servlet.http.HttpSession;
 
