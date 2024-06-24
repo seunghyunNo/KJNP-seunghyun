@@ -37,10 +37,11 @@ public class LoginController {
 		return "redirect:/";
 	}
 	
-	@PostMapping("/logout")	// 로그아웃
+	@GetMapping("/logout")	// 로그아웃
 	public String Logout(HttpSession session) {
 		
 		session.removeAttribute("member");
+		System.out.println("로그아웃 성공");
 		return "redirect:/";
 	}
 }
