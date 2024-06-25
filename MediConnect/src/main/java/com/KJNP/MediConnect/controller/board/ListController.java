@@ -26,6 +26,6 @@ public class ListController {
 		
 		System.out.println("boardList "+boardList);
 		
-		return "nsh/boardList";
+		return "board/boardList";
 	}
 }

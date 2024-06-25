@@ -10,6 +10,7 @@ public class BoardDTO {
 	private int boardIdx;
 	private String title;
 	private String content;
+	private String id;
 	private String writer;
 	private Date regDate;
 }

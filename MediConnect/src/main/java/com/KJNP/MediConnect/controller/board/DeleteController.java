@@ -18,7 +18,6 @@ public class DeleteController {
 	public String deleteBoard(BoardDTO boardDTO) {
 		
 		boardSerivce.delete(boardDTO);
-		
 		System.out.println("삭제 성공");
 		
 		return "redirect:boardList";

@@ -25,10 +25,10 @@
 	</select>
 	
 	<delete id="delete">
-		DELETE FROM BOARD WHERE BOARD_IDX=#{BOARD_IDX} AND WRITER=#{writer}
+		DELETE FROM BOARD WHERE BOARD_IDX=#{boardIdx}
 	</delete>
 	
 	<update id="update">
-		UPDATE BOARD SET TITLE=#{title},CONTENT=#{content} WHERE BOARD_IDX=#{boardIdx} AND WRITER=#{writer}
+		UPDATE BOARD SET TITLE=#{title},CONTENT=#{content} WHERE BOARD_IDX=#{boardIdx}
 	</update>
 </mapper>

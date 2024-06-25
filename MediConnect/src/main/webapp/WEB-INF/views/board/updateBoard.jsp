@@ -77,19 +77,20 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>수정 페이지</h2>
+          <h2>수정 페이지()</h2>
         </div>
 
-        <form action="/boardUpdate" method="POST" class="">
+        <form action="/updateBoard" method="POST" class="">
         <!--글번호 -->
-        <input type="hidden" name="boardIdx" value=""${updateBoard.boardIdx}"/>
+        <input type="hidden" name="boardIdx" value="${updateBoard.boardIdx}"/>
+        <input type="hidden" name="member" value="${loginData.writer}"/> 
           <div class="row">
             <div class="col-md-4 form-group">
-              <input type="text" name="title" class="form-control" id="title" value="${boardData.title}" disabled>
+              <input type="text" name="title" class="form-control" id="title" value="${updateBoard.title}">
             </div>
           </div>
           <div class="form-group mt-3">
-            <textarea class="form-control" name="content" rows="5">${boardData.content}</textarea>
+            <textarea class="form-control" name="content" rows="5">${updateBoard.content}</textarea>
           </div>
           <div class="text-center"><button type="submit">수정</button></div>
         </form>

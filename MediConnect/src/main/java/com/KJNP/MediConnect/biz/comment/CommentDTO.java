@@ -9,6 +9,7 @@ public class CommentDTO {
 	private int commentIdx;
 	private int boardIdx;
 	private String content;
+	private String id;
 	private String writer;
 	private Date regDate;
 }

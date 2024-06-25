@@ -11,6 +11,8 @@ import com.KJNP.MediConnect.biz.board.BoardDTO;
 import com.KJNP.MediConnect.biz.board.BoardService;
 import com.KJNP.MediConnect.biz.comment.CommentDTO;
 import com.KJNP.MediConnect.biz.comment.CommentService;
+import com.KJNP.MediConnect.biz.member.MemberDTO;
+import com.KJNP.MediConnect.biz.member.MemberService;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -22,20 +24,25 @@ public class SingleController {
 
 	@Autowired
 	private CommentService commentService;
+	
+	@Autowired
+	private MemberService memberService;
 
 	@RequestMapping("/boardSingle")
-	public String boardList(HttpSession session, Model model, BoardDTO boardDTO, CommentDTO commentDTO) {
+	public String boardList(HttpSession session, Model model,BoardDTO boardDTO, CommentDTO commentDTO,MemberDTO memberDTO) {
 
-		boardService.selectOne(boardDTO);
+		BoardDTO boardSingle=boardService.selectOne(boardDTO);
+		
 		commentDTO.setBoardIdx(boardDTO.getBoardIdx());
 
 		List<CommentDTO> commentList = commentService.selectAll(commentDTO);
+		
+		MemberDTO loginData = (MemberDTO) session.getAttribute("member");
 
-		model.addAttribute("loginData",session.getAttribute("member"));
-		System.out.println(model.getAttribute("loginData"));
-		model.addAttribute("boardSingle", boardDTO);
+		model.addAttribute("loginData",loginData);
+		model.addAttribute("boardSingle", boardSingle);
 		model.addAttribute("commentList", commentList);
 
-		return "nsh/boardSingle";
+		return "board/boardSingle";
 	}
 }

@@ -124,7 +124,7 @@
 					<tr onclick="location.href='/boardUpdatePage?title=${board.title}'">
 						<td>${board.title}</td>
 						<td>${board.content}</td>
-						<td>${board.time}</td>
+						<td>${board.regDate}</td>
 						<td>
 							<form action="/boardDelete" method="POST">
 								<input type="hidden" name="title" value="${board.title}">

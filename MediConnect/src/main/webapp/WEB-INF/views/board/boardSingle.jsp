@@ -63,31 +63,32 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>게시판 - 글 수정</h2>
+          <h2>게시판 - 글 수정()</h2>
         </div>
 
-        <form action="/boardUpdate" method="POST" class="">
           <div class="row">
             <div class="col-md-4 form-group">
-              <input type="text" name="title" class="form-control" id="title" placeholder="제목" value="${boardData.title}" disabled>
+              <input type="text" name="title" class="form-control" id="title" value="${boardSingle.title}" disabled>
+              
             </div>
           </div>
           <div class="form-group mt-3">
-            <textarea class="form-control" name="content" rows="5" placeholder="내용">${boardData.content}</textarea>
+            <textarea class="form-control" name="content" rows="5" disabled>${boardSingle.content}</textarea>
           </div>
           
           <div class="form-group mt-3">
           <!--작성자라면 수정하기 버튼 나오게-->
-          	<c:if test="${loginData.id == boardSingle.id}">
-          		<div class="text-center"><a href="/updateBoard?id=${boardData.id}">수정하기</a></div>
-          		<div class="text-center"><a href="/deleteBoard?id=${boardData.id}">삭제하기</a></div>
-          	</c:if>
-          
+          <c:if test="${loginData.id == boardSingle.writer}">
+          		<a href="/updateBoard?boardIdx=${boardSingle.boardIdx}">수정하기</a>
+          		<a href="/deleteBoard?boardIdx=${boardSingle.boardIdx}">삭제하기</a>
+          </c:if>
           </div>
-        </form>
         
+        <div class="line thin">
         <tags:comment/>
+        </div>
       </div>
+      
     </section><!-- End Appointment Section -->
 
   </main><!-- End #main -->

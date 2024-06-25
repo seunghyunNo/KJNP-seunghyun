@@ -22,7 +22,7 @@ public class WriteController {
 	@RequestMapping(value="/writeBoard", method = RequestMethod.GET)
 	public String writeBoardPage() {
 		
-		return "nsh/writeBoard";
+		return "board/writeBoard";
 	}
 	
 	@RequestMapping(value="/writeBoard",method=RequestMethod.POST)

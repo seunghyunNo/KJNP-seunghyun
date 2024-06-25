@@ -19,8 +19,8 @@ public class DeleteCommentController {
 	private CommentService commentService;
 	
 	
-	@RequestMapping(value="writreComment",method=RequestMethod.POST)
-	public @ResponseBody boolean writeComment(CommentDTO commentDTO,HttpSession session) {
+	@RequestMapping(value="/deleteComment",method=RequestMethod.GET)
+	public @ResponseBody boolean deleteComment(CommentDTO commentDTO,HttpSession session) {
 		return commentService.delete(commentDTO);
 	}
 }

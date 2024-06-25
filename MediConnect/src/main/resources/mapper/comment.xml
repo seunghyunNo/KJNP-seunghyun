@@ -4,19 +4,20 @@
 <mapper namespace="com.KJNP.MediConnect.biz.comment.CommentDAO">
 	<insert id="insert">
 		INSERT INTO 
-			BOARD(
-			TITLE,
-			CONTENT,
+			COMMENT(
+			BOARD_IDX,
 			WRITER,
+			CONTENT,
 			REG_DATE)
 			 VALUES(
-			 #{content},
+			 #{boardIdx},
 			 #{writer},
+			 #{content},
 			 NOW())
 	</insert>
 	
 	<select id="selectAll">
-		SELECT * FROM BOARD
+		SELECT * FROM COMMENT INNER JOIN MEMBER ON COMMENT.WRITER = MEMBER.ID WHERE COMMENT.BOARD_IDX = #{boardIdx}
 	</select>
 	
 	<select id="selectOne">
@@ -27,6 +28,6 @@
 	</delete>
 	
 	<update id="update">
-		UPDATE BOARD SET CONTENT=#{content} WHERE COMMENT_IDX=#{commentIdx}
+		UPDATE COMMENT SET CONTENT=#{content} WHERE COMMENT_IDX=#{commentIdx}
 	</update>
 </mapper>
